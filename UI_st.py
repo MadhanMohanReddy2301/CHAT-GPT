@@ -43,7 +43,7 @@ if submit:
         # Display the image in Streamlit
         st.image(image, caption=input)
         
-    elif yt or "youtu.be" in input:
+    elif yt in input:
         response = yt_summerize(input)
         st.subheader("Key Points from the video")
         st.write(response)
