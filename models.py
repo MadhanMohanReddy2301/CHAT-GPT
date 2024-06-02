@@ -24,7 +24,7 @@ def get_gemini_response_image(input,image):
   return response.text
 
 def get_gemini_response(input):
-  prompt ="your name is mahesh and you are the Ai assistent"
+  prompt ="your name is Jarvis and you are the Ai assistent"
   response = model.generate_content([prompt,input])
   return response.text
 
