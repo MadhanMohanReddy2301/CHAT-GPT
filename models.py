@@ -24,7 +24,8 @@ def get_gemini_response_image(input,image):
   return response.text
 
 def get_gemini_response(input):
-  response = model.generate_content([input])
+  prompt ="your name is mahesh and you are the Ai assistent"
+  response = model.generate_content([prompt,input])
   return response.text
 
 def video_analisis(video_file_name):
