@@ -2,6 +2,8 @@ import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
 import time
 import requests
+from PIL import Image
+import io
 
 
 genai.configure(api_key="AIzaSyCywxL3BTdCMWt22qmZIxpOJVECFNbr02s")
