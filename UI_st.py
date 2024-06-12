@@ -13,8 +13,8 @@ submit=st.button("submit")
 
 with st.sidebar:
     st.header("Bot Application")
-    st.button("Youtube video summarization")
-    st.button("Upload a image and ask about it")
+    st.write("Youtube video summarization || Upload a image and ask about it || ask to -create image- of anything" )
+
 
     
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
