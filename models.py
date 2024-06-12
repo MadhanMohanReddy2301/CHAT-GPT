@@ -3,6 +3,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import time
 import requests
 
+
 genai.configure(api_key="AIzaSyCywxL3BTdCMWt22qmZIxpOJVECFNbr02s")
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 model_video = genai.GenerativeModel(model_name="models/gemini-1.5-flash-latest")
@@ -50,14 +51,16 @@ def video_analisis(video_file_name):
 
 def imagegen(prompt):
   API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-  headers = {"Authorization": "Bearer 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"}
+  headers = {"Authorization": "Bearer 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"}
   
   payload = {
     "inputs": prompt,
   }
 
   response = requests.post(API_URL, headers=headers, json=payload)
-  return response.content
+  image = Image.open(io.BytesIO(response.content))
+  return image
+  
   
 
     
