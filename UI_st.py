@@ -52,5 +52,5 @@ if submit:
             response = get_gemini_response(input)
         st.subheader("Responses:")
         for chunk in response:
-            st.write(chunk.text)
+            st.write(chunk.text, end='')
         
