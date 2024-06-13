@@ -6,13 +6,13 @@ import io
 
 
 ##initialize our streamlit app
-st.set_page_config(page_title="BOT GPT")
+st.set_page_config(page_title="AIO GPT")
 
 input=st.text_area("Input Prompt: ",key="input")
 submit=st.button("submit")
 
 with st.sidebar:
-    st.header("Bot Application")
+    st.header("AIO Application")
     st.write("Youtube video summarization || Upload a image and ask about it || ask to -create image- of anything" )
 
 
@@ -46,7 +46,11 @@ if submit:
     else:    
         if image != "":
             response = get_gemini_response_image(input, image)
+            
         else:
+            
             response = get_gemini_response(input)
         st.subheader("Responses:")
-        st.write(response)
+        for chunk in response:
+            st.write(chunk.text)
+        
