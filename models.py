@@ -9,6 +9,7 @@ import io
 genai.configure(api_key="AIzaSyCywxL3BTdCMWt22qmZIxpOJVECFNbr02s")
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 model_video = genai.GenerativeModel(model_name="models/gemini-1.5-flash-latest")
+chat = model.start_chat(history=[])
 
 def yt_summerize(url):
   try:
@@ -28,8 +29,9 @@ def get_gemini_response_image(input,image):
 
 def get_gemini_response(input):
   prompt ="your name is Jarvis and you are the Ai assistent"
-  response = model.generate_content([prompt,input])
-  return response.text
+  response = chat.send_message(input, stream =True)
+  #response = model.generate_content([prompt,input])
+  return response
 
 def video_analisis(video_file_name):
   print(f"Uploading file...")
