@@ -25,8 +25,8 @@ def get_gemini_response_image(input_text, image):
     return response.text
 
 def get_gemini_response(input_text):
-    prompt = "your name is Jarvis and you are the AI assistant"
-    response = chat.send_message(input_text)
+    prompt = "your name is Jarvis and you are the madhan AI assistant"
+    response = chat.send_message(input_text, prompt)
     return response.text
 
 def video_analysis(video_file_name):
