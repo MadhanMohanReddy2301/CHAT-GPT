@@ -57,8 +57,10 @@ if input_text:
         st.session_state.messages.append({"role": "assistant", "image_data": image_data})
     elif yt_url in input_text:
         response = yt_summerize(input_text)
-        st.subheader("Key Points from the video")
-        st.write(response)
+         with st.chat_message("user"):
+            st.markdown(input_text)
+        with st.chat_message("assistant"):
+            st.markdown(response)
         st.session_state.messages.append({"role": "user", "content": input_text})
         st.session_state.messages.append({"role": "assistant", "content": response})
     else:
