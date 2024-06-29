@@ -49,7 +49,7 @@ def video_analysis(video_file_name):
 
 def imagegen(prompt):
     API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-    headers = {"Authorization": "Bearer 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"}
+    headers = {"Authorization": "Bearer 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"}
 
     payload = {
         "inputs": prompt,
