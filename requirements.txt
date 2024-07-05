@@ -1,3 +1,6 @@
 streamlit
 google-generativeai
 youtube_transcript_api
+googlesearch-python 
+requests 
+beautifulsoup4
