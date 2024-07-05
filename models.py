@@ -4,6 +4,7 @@ import time
 import requests
 from PIL import Image
 import io
+from internetData import main
 
 # Configure the Google Generative AI client
 genai.configure(api_key="AIzaSyCywxL3BTdCMWt22qmZIxpOJVECFNbr02s")
@@ -25,8 +26,11 @@ def get_gemini_response_image(input_text, image):
     return response.text
 
 def get_gemini_response(input_text):
-    prompt = "your name is Jarvis and you are the madhan AI assistant"
-    response = chat.send_message(input_text)
+
+    realdata = main(input_text)
+   
+    prompt = f"Below is some information retrieved from various internet sources related to your query:real time data:{realdata} Based on the above real-time information and your own knowledge, please provide a comprehensive response to the following query. If the query is about real-time or current data, prioritize using the provided real-time information along with your internal knowledge to generate a complete and detailed response:user question:{input_text}"
+    response = chat.send_message(prompt)
     return response.text
 
 def video_analysis(video_file_name):
@@ -49,7 +53,7 @@ def video_analysis(video_file_name):
 
 def imagegen(prompt):
     API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-    headers = {"Authorization": "Bearer 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"}
+    headers = {"Authorization": "Bearer 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"}
 
     payload = {
         "inputs": prompt,
