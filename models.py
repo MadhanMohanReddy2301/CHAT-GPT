@@ -1,3 +1,4 @@
+
 import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
 import time
@@ -5,9 +6,12 @@ import requests
 from PIL import Image
 import io
 from internetData import main
+import random
+
+api_keys = ["AIzaSyBhfUMISwrJyU9LibvbcP-qK26j4HrdIEg","AIzaSyCywxL3BTdCMWt22qmZIxpOJVECFNbr02s"]
 
 # Configure the Google Generative AI client
-genai.configure(api_key="AIzaSyBhfUMISwrJyU9LibvbcP-qK26j4HrdIEg")
+genai.configure(api_key=random.choice(api_keys))
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 model_video = genai.GenerativeModel(model_name="models/gemini-1.5-flash-latest")
 chat = model.start_chat(history=[])
