@@ -7,7 +7,7 @@ import io
 from internetData import main
 
 # Configure the Google Generative AI client
-genai.configure(api_key="AIzaSyCywxL3BTdCMWt22qmZIxpOJVECFNbr02s")
+genai.configure(api_key="AIzaSyBhfUMISwrJyU9LibvbcP-qK26j4HrdIEg")
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 model_video = genai.GenerativeModel(model_name="models/gemini-1.5-flash-latest")
 chat = model.start_chat(history=[])
