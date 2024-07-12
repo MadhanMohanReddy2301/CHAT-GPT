@@ -2,7 +2,7 @@ from googlesearch import search
 import requests
 from bs4 import BeautifulSoup
 
-def google_search(query, num_results=2):
+def google_search(query, num_results=1):
     return search(query, num_results)
 
 def fetch_page_content(url):
@@ -28,7 +28,7 @@ def extract_body_content(html_content):
 
 def main(query1):
     query = query1
-    num_urls = 2
+    num_urls = 1
     urls = google_search(query, num_results=num_urls)
     collected_data = ""
 
