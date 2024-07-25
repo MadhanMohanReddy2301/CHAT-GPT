@@ -31,10 +31,10 @@ def get_gemini_response_image(input_text, image):
 
 def get_gemini_response(input_text):
 
-    realdata = main(input_text)
+    #realdata = main(input_text)
    
-    prompt = f"Below is some information retrieved from various internet sources related to your query:real time data:{realdata} Based on the above real-time information and your own knowledge, please provide a comprehensive response to the following query. If the query is about real-time or current data, prioritize using the provided real-time information along with your internal knowledge to generate a complete and detailed response:user question:{input_text}"
-    response = chat.send_message(prompt)
+    #prompt = f"Below is some information retrieved from various internet sources related to your query:real time data:{realdata} Based on the above real-time information and your own knowledge, please provide a comprehensive response to the following query. If the query is about real-time or current data, prioritize using the provided real-time information along with your internal knowledge to generate a complete and detailed response:user question:{input_text}"
+    response = chat.send_message(input_text)
     return response.text
 
 def video_analysis(video_file_name):
