@@ -17,6 +17,9 @@ AIO GPT is a powerful AI application that integrates multiple functionalities, i
 - **Streamlit UI:** Provides an interactive user interface for the app.
 - **Python Libraries:** Includes `requests`, `PIL`, `youtube_transcript_api`, and others to handle image and video processing.
 
+![application](./mockimage.png)
+
+
 ## Installation
 
 1. **Clone the repository:**
